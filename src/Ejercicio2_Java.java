@@ -1,3 +1,6 @@
+
+import java.util.Scanner;
+
 /*Una empresa tiene **4 sucursales** y desea analizar las unidades vendidas de **5 productos** durante una jornada. La información debe almacenarse en una matriz de 4 filas por 5 columnas:
 
 - Cada fila representa una sucursal.
@@ -19,6 +22,9 @@ Construya un programa que:
 
 public class Ejercicio2_Java {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        int[][] sucursaleProducto = new int[4][5];
+        Scanner scanner = new Scanner(System.in);
+        int unidades = scanner.nextInt();
+        System.out.println(unidades);
     }
 }

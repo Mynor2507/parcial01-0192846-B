@@ -1,6 +1,8 @@
 
 import java.util.Scanner;
 
+
+
 /*Un centro de distribución registró la cantidad de paquetes procesados durante **10 horas consecutivas**. Los valores son enteros y deben almacenarse en un arreglo unidimensional.
 
 Construya un programa que:
@@ -20,19 +22,20 @@ Construya un programa que:
 public class Ejercicio1_Java {
     public static void main(String[] args) throws Exception {
        //creacion del arreglo
-       int[] paquetesHoras = new int[10];
+       int[] paquetesHoras = {10, 20, 30};
 
        //solicitar cantidad de paquetes recibidos por hora
        Scanner scanner = new Scanner(System.in);
        int paquete = scanner.nextInt();
        if (paquete > 0) {
-           int[0] paquetesHoras = {paquete}
-           
+           paquetesHoras[0] = paquete ;
+           int longitudArray = 10;
+           for (int i = 0; longitudArray < 10; i++) {
+               System.out.println("paquete registrado como hora" + (i+1) +":" + paquetesHoras[0]);
+           }
        } else {
-
+         System.out.println("Numero invalido");
        }
-
-       paquetesHoras[0] = entradaScanner.nextInt();
-
+       
     }
 }
