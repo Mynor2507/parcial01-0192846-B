@@ -22,9 +22,37 @@ Construya un programa que:
 
 public class Ejercicio2_Java {
     public static void main(String[] args) throws Exception {
-        int[][] sucursaleProducto = new int[4][5];
-        Scanner scanner = new Scanner(System.in);
-        int unidades = scanner.nextInt();
-        System.out.println(unidades);
+        Scanner sc = new Scanner(System.in);
+
+        //creacion el arreglo
+        int[][] sucursalesProducto = new int[4][5];
+
+        //constantes
+        final int SUCURSALES_LONGITUD = sucursalesProducto.length;
+
+        //solicitar productos vendidos
+        for (int i = 0; i < SUCURSALES_LONGITUD; i++) {
+            for (int j = 0; j < sucursalesProducto[i].length; j++) {
+                int paquetes;
+
+                do {
+                    System.out.println("Ingrese el numero de paquetes vendidos en la sucursal " + (i + 1) + " del producto " + (j + 1) + ":");
+                    paquetes = sc.nextInt();
+
+                    if (paquetes < 0) {
+                        System.out.println("Dato invalido, vuelva a intentarlo... ");
+                    }
+                } while (paquetes < 0);
+
+                sucursalesProducto[i][j] = paquetes;
+            }
+
+            System.out.println("-----------------------------------");
+        }
+        
+        //total de unidades vendidas en cada ssucursal
+        for (int i = 0; i < sucursalesProducto.length; i++) {
+            
+        }
     }
 }
