@@ -50,9 +50,85 @@ public class Ejercicio2_Java {
             System.out.println("-----------------------------------");
         }
         
-        //total de unidades vendidas en cada ssucursal
-        for (int i = 0; i < sucursalesProducto.length; i++) {
-            
+        //total de unidades vendidas en cada sucursal
+        for (int i = 0; i < SUCURSALES_LONGITUD; i++) {
+            int totalSucursal = 0;
+
+            for (int j = 0; j < sucursalesProducto[i].length; j++) {
+                totalSucursal += sucursalesProducto[i][j];
+            }
+
+            System.out.println("Total de unidades vendidas en la sucursal " + (i + 1) + ": " + totalSucursal);
+            System.out.println("-----------------------------------");
         }
+        
+        //total vendido de cada producto, sumando las cuatro sucursales.
+        for (int j = 0; j < sucursalesProducto[0].length; j++) {
+            int totalProducto = 0;
+
+            for (int i = 0; i < SUCURSALES_LONGITUD; i++) {
+                totalProducto += sucursalesProducto[i][j];
+            }
+
+            System.out.println("Total de unidades vendidas del producto " + (j + 1) + ": " + totalProducto);
+            System.out.println("-----------------------------------");
+        }
+        
+        //sucursal con la menor cantidad total de ventas.
+        int sucursalMenor = 0;
+        for (int i = 0; i < SUCURSALES_LONGITUD; i++) {
+            int totalSucursal = 0;
+
+            for (int j = 0; j < sucursalesProducto[i].length; j++) {
+                totalSucursal += sucursalesProducto[i][j];
+            }
+
+            if (totalSucursal < sucursalesProducto[sucursalMenor][0]) {
+                sucursalMenor = i;
+            }
+        }
+        System.out.println("La sucursal con menor cantidad de ventas es: " + (sucursalMenor + 1));
+        System.out.println("-----------------------------------");
+        
+        //El producto con la mayor cantidad total de unidades vendidas.
+        int productoMayor = 0;
+        for (int j = 0; j < sucursalesProducto[0].length; j++) {
+            int totalProducto = 0;
+
+            for (int i = 0; i < SUCURSALES_LONGITUD; i++) {
+                totalProducto += sucursalesProducto[i][j];
+            }
+
+            if (totalProducto > sucursalesProducto[0][productoMayor]) {
+                productoMayor = j;
+            }
+        }
+        System.out.println("El producto con la mayor cantidad total de unidades vendidas es: " + (productoMayor + 1));
+        System.out.println("-----------------------------------");
+
+        //Cuántos registros de la matriz fueron superiores a 30 unidades.
+        int registrosSuperiores = 0;
+        for (int i = 0; i < SUCURSALES_LONGITUD; i++) {
+            for (int j = 0; j < sucursalesProducto[i].length; j++) {
+                if (sucursalesProducto[i][j] > 30) {
+                    registrosSuperiores++;
+                }
+            }
+        }
+        System.out.println("La cantidad de registros con ventas superiores a 30 unidades es: " + registrosSuperiores);
+        System.out.println("-----------------------------------");
+
+        //Mostrar la matriz completa, organizada por sucursales y productos.
+        System.out.println("Matriz completa de ventas por sucursal y producto:");
+        for (int i = 0; i < SUCURSALES_LONGITUD; i++) {
+            for (int j = 0; j < sucursalesProducto[i].length; j++) {
+                System.out.print(sucursalesProducto[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        System.out.println("-----------------------------------");
+
     }
+
 }
