@@ -36,7 +36,7 @@ public class Ejercicio2_Java {
                 int paquetes;
 
                 do {
-                    System.out.println("Ingrese el numero de paquetes vendidos en la sucursal " + (i + 1) + " del producto " + (j + 1) + ":");
+                    System.out.print("Ingrese el numero de paquetes vendidos en la sucursal " + (i + 1) + " del producto " + (j + 1) + ":");
                     paquetes = sc.nextInt();
 
                     if (paquetes < 0) {

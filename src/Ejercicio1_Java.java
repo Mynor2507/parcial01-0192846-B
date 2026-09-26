@@ -29,10 +29,10 @@ public class Ejercicio1_Java {
         int[] paquetesHoras = new int[10];
 
         // constantes
-        final int longitudPaquetes = paquetesHoras.length;
+        final int LONGITUD_PAQUETES = paquetesHoras.length;
 
         // solicitud de datos
-        for (int i = 0; i < longitudPaquetes; i++) {
+        for (int i = 0; i < LONGITUD_PAQUETES; i++) {
 
             int paquetes;
 
@@ -63,7 +63,7 @@ public class Ejercicio1_Java {
         System.out.println("-------------------");
 
         // promedio de paquetes por hora
-        float promedio = suma / (float) longitudPaquetes;
+        float promedio = suma / (float) LONGITUD_PAQUETES;
 
         System.out.println("El promedio de los paquetes por hora es: " + promedio);
         System.out.println("-------------------");
@@ -71,7 +71,7 @@ public class Ejercicio1_Java {
         // hora con menos paquetes
         int horaMenos = 0;
 
-        for (int i = 0; i < longitudPaquetes; i++) {
+        for (int i = 0; i < LONGITUD_PAQUETES; i++) {
             if (paquetesHoras[i] < paquetesHoras[horaMenos]) {
                 horaMenos = i;
             }
@@ -88,7 +88,7 @@ public class Ejercicio1_Java {
         // horas con produccion inferior al promedio
         int inferiores = 0;
 
-        for (int i = 0; i < longitudPaquetes; i++) {
+        for (int i = 0; i < LONGITUD_PAQUETES; i++) {
             if (paquetesHoras[i] < promedio) {
                 inferiores++;
             }
@@ -103,7 +103,7 @@ public class Ejercicio1_Java {
         int rachaActual = 0;
         int rachaMayor = 0;
 
-        for (int i = 0; i < longitudPaquetes; i++) {
+        for (int i = 0; i < LONGITUD_PAQUETES; i++) {
 
             if (paquetesHoras[i] < promedio) {
                 rachaActual++;
@@ -125,7 +125,7 @@ public class Ejercicio1_Java {
         // listado final
         System.out.println("LISTADO FINAL");
 
-        for (int i = 0; i < longitudPaquetes; i++) {
+        for (int i = 0; i < LONGITUD_PAQUETES; i++) {
             System.out.println("Hora " + (i + 1) + ": "
                     + paquetesHoras[i] + " paquetes");
         }
